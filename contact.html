@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お問い合わせフォーム</title>
+    <link href="http://fonts.googleapis.com/earlyaccess/notosansjp.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- ヘッダー部分 -->
+    <header>
+        <h1>N’s Plan</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">TOP</a></li>
+                <li><a href="company.html">About Us</a></li>
+                <li><a href="confirm.html">Service</a></li>
+                <li><a href="send.html">Works</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="hamburger">
+            <span class="line1"></span>
+            <span class="line2"></span>
+            <span class="line3"></span>
+        </div>
+    </header>
+
+    <!-- タイトルセクション -->
+    <section class="contact-title">
+        <h1>お問い合わせ</h1>
+        <p>当社への問い合わせは以下からお願いします。</p>
+        <span class="title-bg">Contact</span> <!-- 背景テキスト -->
+    </section>
+
+    <section class="confirm">
+        <div class="step-indicator">
+            <div class="step active">01. 入力</div>
+            <div class="step">02. 確認</div>
+            <div class="step">03. 完了</div>
+        </div>
+        <div class="form-container">
+            <!--<h2>お問い合わせフォーム</h2> -->
+            <form action="/confirm.html">
+                <div class="form-group">
+                    <label for="company">会社名</label>
+                    <input type="text" id="company" name="company" placeholder="例: 株式会社サンプル">
+                </div>
+                <div class="form-group">
+                    <label for="name">名前 <span>*</span></label>
+                    <input type="text" id="name" name="name" required placeholder="例: 山田 太郎">
+                </div>
+                <div class="form-group">
+                    <label for="furigana">フリガナ <span>*</span></label>
+                    <input type="text" id="furigana" name="furigana" required placeholder="例: ヤマダ タロウ">
+                </div>
+                <div class="form-group">
+                    <label for="phone">電話番号 <span>*</span></label>
+                    <input type="tel" id="phone" name="phone" required placeholder="例: 090-1234-5678">
+                </div>
+                <div class="form-group">
+                    <label for="email">メールアドレス <span>*</span></label>
+                    <input type="email" id="email" name="email" required placeholder="例: example@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="message">お問い合わせ内容 <span>*</span></label>
+                    <textarea id="message" name="message" required placeholder="お問い合わせ内容を入力してください"></textarea>
+                </div>
+                <!-- 個人情報の取り扱いに関する同意チェックボックス -->
+            <div class="checkbox-group">
+                <label for="privacy" class="checkbox-label">
+                    <input type="checkbox" id="privacy" name="privacy" required>
+                    <span><a href="/privacy.html" target="_blank">個人情報の取り扱い</a>に同意する</span>
+                </label>
+            </div>
+                <button type="submit" class="submit-btn">確認画面へ</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <h2>株式会社 N's plan</h2>
+        <p>〒840-0802</p>
+        <div class="other">
+            <a>利用規約</a>
+            <a>プライバリーポリシー</a>
+        </div>
+        <div class="rights">
+            <p>&copy; 2025 N’s Plan. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+ </body>
+</html>
