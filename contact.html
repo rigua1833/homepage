@@ -14,7 +14,7 @@
         <nav>
             <ul>
                 <li><a href="index.html">TOP</a></li>
-                <li><a href="company.html">About Us</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
                 <li><a href="confirm.html">Service</a></li>
                 <li><a href="send.html">Works</a></li>
                 <li><a href="contact.html">Contact</a></li>
@@ -31,7 +31,7 @@
     <section class="contact-title">
         <h1>お問い合わせ</h1>
         <p>当社への問い合わせは以下からお願いします。</p>
-        <span class="title-bg">Contact</span> <!-- 背景テキスト -->
+        <!--  <span class="title-bg">Contact</span>背景テキスト -->
     </section>
 
     <section class="confirm">
@@ -41,8 +41,7 @@
             <div class="step">03. 完了</div>
         </div>
         <div class="form-container">
-            <!--<h2>お問い合わせフォーム</h2> -->
-            <form action="/confirm.html">
+            <form id="contactForm">
                 <div class="form-group">
                     <label for="company">会社名</label>
                     <input type="text" id="company" name="company" placeholder="例: 株式会社サンプル">
@@ -74,8 +73,9 @@
                     <span><a href="privacy-policy.html" target="_blank">プライバリーポリシー</a>に同意する</span>
                 </label>
             </div>
-                <button type="submit" class="submit-btn">確認画面へ</button>
+                <button type="submit" class="submit-btn">送信</button>
             </form>
+            <p id="responseMessage"></p>
         </div>
     </section>
 
@@ -83,7 +83,7 @@
         <h2>株式会社 N's plan</h2>
         <p>〒840-0802</p>
         <div class="other">
-            <a>プライバリーポリシー</a>
+            <a href="privacy-policy.html">プライバリーポリシー</a>
         </div>
         <div class="rights">
             <p>&copy; 2025 N’s Plan. All rights reserved.</p>
