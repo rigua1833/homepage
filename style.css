@@ -1,3 +1,7 @@
+html {
+    overflow-x: hidden;
+}
+
 /* すべての要素の余白とボックスモデルをリセット */
 * {
     margin: 0;
@@ -168,6 +172,24 @@ nav ul li a {
 /*3/25に追加*/
 .aboutus-info {
     background-color: #EFE9E2;;
+}
+
+
+.responsive-iframe {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 のアスペクト比 */
+    height: 0;
+    overflow: hidden;
+}
+
+.responsive-iframe iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
 }
 
 
@@ -496,7 +518,8 @@ footer {
 
     .aboutus-title, .contact-title {
         height: 200px; /* スマホ用に高さを調整 */
-        min-width: 400px;
+        /*min-width: 400px;*/
+        max-width: 100%; /*4/8変更*/
         padding: 50px 20px;
     }
     .aboutus-title h1 , .contact-title h1  {
@@ -514,7 +537,14 @@ footer {
     .sp_br {
         display: block; /*768未満で改行タグを有効にする*/
     }
-
+    th, td {
+        font-size: 12px;
+        max-width: 100%;
+    }
+    th {
+        font-size: 14px;
+        width: 60%;
+    }
 }
 /* PCサイズではハンバーガーを非表示 */
 @media (min-width: 769px) {
@@ -694,7 +724,8 @@ footer {
     border-radius: 12px; /* 角を丸く */
     box-shadow: 0 0 8px rgba(0,0,0,0.1); /* 軽い影を付ける */
     width: 100%;
-    max-width: 450px; /* 最大幅 */
+    /*max-width: 450px; /* 最大幅 */
+    max-width: 100%; /*4/8変更*/
     justify-content: center;
     align-items: center;
     text-align: center;
