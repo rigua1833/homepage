@@ -35,14 +35,18 @@ header {
     transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
     color: #F5F1EB;
     z-index: 10;
+    list-style: none;
 }
 
 /* 非表示状態：上にスライド */
 header.hide {
     transform: translateY(-100%);
-  }
+}
 
-
+header a {
+    text-decoration: none;
+    color: #F5F1EB;
+}
 nav ul {
     list-style: none;
     display: flex;
@@ -56,6 +60,10 @@ nav ul li a {
     text-decoration: none;
     color: #F5F5F5;
     font-weight: bold;
+}
+
+nav ul li a.current {
+    color: #5685b5;
 }
 
 
@@ -75,7 +83,7 @@ nav ul li a {
     font-size: 15px;
     color: #ffffff;
     writing-mode: vertical-rl;
-    top: 85%;
+    top: 88.5%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
 }
@@ -89,7 +97,7 @@ nav ul li a {
     bottom: -93px;
     transform: translateX(-50%);
     width: 1px;
-    height: 80px;
+    height: 85px;
     animation: scroll 1.5s infinite;
 }
 
@@ -122,8 +130,6 @@ nav ul li a {
 /*タイトルセクション（背景付き） */
 .aboutus-title, .contact-title {
     position: relative;
-    /*background: linear-gradient(to bottom, #2d5c85, #5893b6);*/
-    /*background: linear-gradient(to bottom, #2c3e50, #a9adb0);*/
     background-color: #51585b;
     color: white;
     text-align: center;
@@ -149,24 +155,7 @@ nav ul li a {
     font-size: 18px;
     opacity: 0.9;
     position: relative;
-    z-index: 1; /* 背景の「Company」より前面に配置 */
 }
-
-/* 背景の「Company」テキスト 
-.title-bg {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 120px;
-    font-weight: bold;
-    color: rgba(255, 255, 255, 0.1); /* 半透明の白 
-    white-space: nowrap;
-    z-index: 0; /* 背景として配置 
-    user-select: none;  選択不可にする 
-    pointer-events: none; クリック操作を邪魔しないように 
-}
-*/
 
 
 /*3/25に追加*/
@@ -174,7 +163,7 @@ nav ul li a {
     background-color: #EFE9E2;;
 }
 
-
+/*会社概要のGoogle Map設定*/
 .responsive-iframe {
     position: relative;
     width: 100%;
@@ -301,7 +290,8 @@ nav ul li a {
 
 .work-item img {
     width: 360px;
-    height: auto;
+    height: 240px;
+    /*object-fit: cover;*/
 }
 
 
@@ -355,20 +345,20 @@ footer {
 .more-btn {
     display: flex;
     align-items: center;
-    justify-content: space-between;/* Moreと線を適切に配置 */
+    justify-content: center;/* Moreと線を適切に配置 */
     width: 160px; /* ボタンの幅 */
     padding: 10px 15px;
-    border: 1px solid #F5F5F5; /* 外枠 */
+    border: 1px solid #F5F5F5;  /*外枠 */
     /*background-color: transparent;*/
     background-color: #3E6C94;
     cursor: pointer;
     position: relative;
     overflow: hidden;
-    transition: background-color 0.3s ease-in-out;
+    /*transition: background-color 0.3s ease-in-out;*/
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+    border-radius: 8px;
 }
-.service .more-btn {
-    border: 1px solid #F5F5F5; /* 外枠 */
-}
+
 
 .more-text {
     font-size: 16px;
@@ -376,35 +366,13 @@ footer {
     color: #F5F5F5;
     transition: color 0.3s ease-in-out;
 }
-.service .more-text {
-    color: #F5F5F5;
-}
-
-.more-line {
-    display: block;
-    width: 60px;  /* 横線の長さ */
-    height: 1px;  /* 横線の太さ */
-    background-color: #F5F5F5;
-    margin-left: 10px; /* テキストと線の間隔 */
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-}
-.service .more-line {
-    background-color: #F5F5F5;
-}
 
 /* ホバー時のスタイル */
 .more-btn:hover {
-    background-color: #505FB5;
+    background-color: #34516E;
+    transform: scale(1.05);
 }
 
-.more-btn:hover .more-text {
-    color: #F5F5F5;
-}
-
-.more-btn:hover .more-line {
-    transform: translateX(50px); /* 右にスライド */
-    opacity: 0; /* フェードアウト */
-}
 
 /*スマホサイズ*/
 @media screen and (max-width: 768px) {
@@ -475,7 +443,7 @@ footer {
     }
 
     nav ul li a:hover {
-        color: #007a88;
+        color: #34516E;
         transition: background-color 0.2s ease;
     }
 
@@ -545,12 +513,30 @@ footer {
         font-size: 14px;
         width: 60%;
     }
+    .policy h1 {
+        font-size: 20px !important;
+    }
+    .policy h2 {
+        font-size: 18px !important;
+    }
+    .policy p, .policy li {
+        font-size: 14px;
+    }
 }
 /* PCサイズではハンバーガーを非表示 */
 @media (min-width: 769px) {
     .hamburger {
         display: none;
     }
+}
+@media screen and (max-width: 480px) {
+    th, td {
+        font-size: 8px;
+    }
+    th {
+        font-size: 10px;
+    }
+
 }
 
 /*1024px未満*/
@@ -604,19 +590,12 @@ footer {
     }
 
     .work-item img {
-        width: 90%;
-        max-width: 400px;
+        width: 360px;
     }
 
     .more-btn {
         max-width: 200px; /* スマホでは幅いっぱいにする */
         padding: 15px; /* 余白を増やす */
-        justify-content: center; /* スマホでは中央揃え */
-        align-items: center;
-    }
-
-    .more-line {
-        display: none; /* スマホでは線を消す */
     }
 }
 
@@ -672,7 +651,7 @@ footer {
 }
 
 .contact-btn:hover {
-    background: #353889;
+    background-color: #34516E;
     transform: scale(1.05);
 }
 
@@ -684,6 +663,7 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 8vh 12vw;
 }
 
 /* ステップ表示のコンテナ */
@@ -710,22 +690,22 @@ footer {
     margin: 0 10px;
 }
 
-/* 現在のステップを強調 */
-.active {
-    background-color: #312290; /* アクティブなステップの色 */
-}
+
+
 
 /* フォーム全体のスタイル */
 .form-container {
     display: flex;
     flex-direction: column; /* 縦並び（デフォルト） */
     background-color: #dfdfdf; /* 白背景 */
-    padding: 15px;
+    /*padding: 25px;*/
+    padding: 8vh 12vw;
     border-radius: 12px; /* 角を丸く */
     box-shadow: 0 0 8px rgba(0,0,0,0.1); /* 軽い影を付ける */
     width: 100%;
     /*max-width: 450px; /* 最大幅 */
-    max-width: 100%; /*4/8変更*/
+    max-width: 800px;
+
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -811,7 +791,7 @@ footer {
 
 /*プライバシーポリシーのページ*/
 .policy .container {
-    padding-top: 120px;
+    padding: 120px 40px 40px 40px;
 }
 .policy h1 {
     font-size: 24px;
@@ -821,10 +801,14 @@ footer {
 .policy h2 {
     padding: 1rem 0rem;
     margin-bottom: 0.2rem;
-    border-bottom: 3px solid #a6ddeb;
+    border-bottom: 3px solid #5685b5;
     font-weight: bold;
     font-size: 26px;
-  }
+}
+
+.policy ul {
+    padding: 0 5%;
+}
   
 .policy p {
     margin-bottom: 15px;
@@ -840,7 +824,6 @@ footer {
     border-radius: 6px; /* 角を丸く */
     cursor: pointer;
     font-size: 16px;
-    margin: 40px 20px 15px;
     text-align: center;
     transition: background 0.3s ease-in-out;
 }
@@ -853,12 +836,14 @@ footer {
 }
 .back-btn {
     background-color: #aaa;
+    margin-right: 25px;
 }
 
 /* 「戻る」「送信」ボタンを中央に配置 */
 .confirm-btn-group {
     display: flex;
     justify-content: center;
+    white-space: nowrap;
     width: 60%;
 }
 
@@ -878,7 +863,8 @@ footer {
     justify-content: center;
     align-items: center;
     padding: 8vh 12vw;
-    background-color: #EFE9E2;
+    /*background-color: #EFE9E2;*/
+    background-color: #F5F5F5;
 }
 
 /* 白背景のカード風デザイン（影付き） */
@@ -907,6 +893,7 @@ th {
     text-align: left;
     font-weight: bold;
     width: 30%;
+    white-space: nowrap;
 }
 
 .map-container {
@@ -915,5 +902,16 @@ th {
     margin-top: 5%;
 }
 
+.form-error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  
+  .input-error {
+    border: 1px solid red;
+  }
+  
 
 
+  
