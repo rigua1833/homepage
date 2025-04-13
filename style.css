@@ -506,6 +506,7 @@ footer {
         display: block; /*768未満で改行タグを有効にする*/
     }
     th, td {
+        padding: 10px 0;
         font-size: 12px;
         max-width: 100%;
     }
