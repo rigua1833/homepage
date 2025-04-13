@@ -531,10 +531,10 @@ footer {
 }
 @media screen and (max-width: 480px) {
     th, td {
-        font-size: 12px;
+        font-size: 10px;
     }
     th {
-        font-size: 12px;
+        font-size: 10px;
     }
 
 }
@@ -715,7 +715,7 @@ footer {
 
 /* 入力欄のスタイル */
 .form-group {
-    padding: 0 10px;
+    padding: 0 20px;
     margin-bottom: 15px;
     width: 300px;
 }
